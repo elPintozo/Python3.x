@@ -1,3 +1,4 @@
+# coding=utf-8
 palabra = "candado"
 palabra_dos = "'candado'"
 
@@ -45,3 +46,8 @@ print("-",lista)
 print("Un trozo desde la posición 0 a 12:", lista[:12])
 print("Un trozo desde la posición 0 a 12, saltando de 2 en 2:", lista[:12:2])
 print("Lista inversa:",lista[::-1])
+
+texto_cinco = "Hola Mundo, buenos días"
+print("Texto normal: {}".format(texto_cinco))
+texto_cinco = texto_cinco.replace(' ','')
+print("Mismo texto sin espacios: {}".format(texto_cinco))
