@@ -12,6 +12,7 @@ def mostrar_resultado(funcion):
 def muchos_numeros(*args):##por convencion se debe llamar asi a esa variable
 	print(type(args))
 	print(args)
+	args[0]
 	suma_total=0
 	for x in args:
 		suma_total +=x
@@ -44,17 +45,32 @@ nuevo_sumar = sumar
 print(nuevo_sumar(4,4))
 print("--")
 mostrar_resultado(sumar)
-print("--")
+print("--Funciones con *args")
 total = muchos_numeros(2,3,4,5,6)
 print(total)
 
-print("--")
+print("--Funciones con **kwargs")
 
 solucion = muchos_parametros(x=5,y="ok",z=True, http=1.101)
 print(solucion)
 
-print("---")
+print("---Funciones Lambda")
 
 operacion = lambda x_1, x_2 : x_1 + x_2 ##una forma de hacer funciones
 
 print(operacion(1,1))
+
+
+print("---Funciones anidadas")
+
+
+def validaciones(n1,n2):
+	def validacion_uno():
+		return n1>0
+	def validacion_dos():
+		return n2>0
+
+	return validacion_uno() and validacion_dos()
+
+validacion_final = validaciones(1,1)
+print(validacion_final)	
