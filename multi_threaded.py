@@ -16,11 +16,15 @@ def funcion_2():
 		print("(2) : {}".format(x))
 		x+=1
 try:
+
 	hilo1 = threading.Thread(target=funcion_1)
 	hilo2 = threading.Thread(target=funcion_2)
+	
 	hilo1.start()
 	hilo2.start()
+
 	hilo1.join()
 	hilo2.join()
+
 except ValueError:
     print("Error")
