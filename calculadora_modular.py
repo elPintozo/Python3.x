@@ -14,27 +14,27 @@ __status__		= "En desarrollo"
 
 def suma(a,b):
 	""" Función encarda de sumar dos valores """	
-	return a + b
+	return int(a) + int(b)
 
 def resta(a,b):
 	""" Función encarda de restar dos valores """	
-	return a-b
+	return int(a)-int(b)
 
 def multiplicacion(a,b):
 	""" Función encarda de multiplicar dos valores """	
-	return a*b
+	return int(a)*int(b)
 
 def division(a,b):
 	""" Función encarda de dividir dos valores """	
-	return a/b
+	return int(a)/int(b)
 
 def resto(a,b):
 	""" Función encarda de obtener el resto de dos valores """	
-	return a%b
+	return int(a)%int(b)
 
 def exponente(a,b):
 	""" Función encarda de elever un número por otro """	
-	return a**b
+	return int(a)**int(b)
 
 
 """Requisitos de un modilo
