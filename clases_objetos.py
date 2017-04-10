@@ -61,6 +61,17 @@ class Circulo:##clase
 	def area(self):
 		return self.radio * self.radio * Circulo._pi
 
+class Animal:
+	volador = True
+class Cocodrilo(Animal):
+	def __init__(self, nombre):
+		self.nombre = nombre
+
+	@classmethod ## metodo de la clase
+	def new(cls, nombre):
+		cls.volador =False
+		return Cocodrilo(nombre)
+
 nuevo_circulo_1 = Circulo(4)
 nuevo_circulo_2 = Circulo(5)
 
@@ -71,3 +82,27 @@ print("El radio del dos es circulo es: {}".format(nuevo_circulo_2.area()))
 print("El valor de pi es: {}".format(Circulo._pi))
 print("Atributos de la clase:\n {}".format(nuevo_circulo_1.__dict__))##atributos de la clase
 print("Estado de uso de la clase Circulo: {}".format(Circulo.status()))
+
+print("-- Metodos de clase --")
+coco = Cocodrilo.new("papi")
+print("Nombre: {}".format(coco.nombre))
+print("Puede volar: {}".format(coco.volador))
+
+print("\n -------------Clase Usuario")
+class Usuario:
+	def __new__(cls):
+		print("Este metodo es para crear, incluso antes del metodo __init__")
+		return super().__new__(cls)
+		
+	def __init__(self):
+		print("Este es el metodo __init__ el tradicional para crear un objeto")
+
+	def __str__(self):
+		return "Este mensaje aparece porque intentas saber info del objeto"
+
+	def __getattr__(self, atributo):
+		print("Sorry el atributo que buscas no esta en este objeto")
+
+usuario = Usuario()
+print("{}".format(usuario.__str__))
+print("{}".format(usuario.apellido))
